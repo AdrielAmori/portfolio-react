@@ -1,0 +1,13 @@
+.projects {
+  text-align: justify;
+  margin-left: 75px;
+  justify-content: center;
+}
+
+.projects h1 {
+  font-size: 45px;
+}
+
+.projects div #btn1{
+  text-align: center !important;
+}
