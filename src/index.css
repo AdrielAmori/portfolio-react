@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./Image/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: aliceblue;
 }
 
@@ -13,4 +16,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
