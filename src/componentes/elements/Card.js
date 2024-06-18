@@ -1,20 +1,40 @@
-import styles from './Card.module.css'
-import ButtonB from './ButtonB'
+import styles from "./Card.module.css";
+import ButtonB from "./ButtonB";
 
-function Card({img, title, tech, description, repo, site}) {
+import React, { useState } from "react";
+
+function Card({ img, title, tech, description, repo, site }) {
+  const [info, setInfo] = useState(false);
+
+  function showDetails() {
+    setInfo(true);
+  }
+
+  function hideDetails() {
+    setInfo(false);
+  }
+
   return (
-    <div className={styles.card}>
-      <a href={site}>
-        <img src={img} alt="ERRO"/>
+    <div onMouseLeave={hideDetails} className={styles.card}>
+      <a onMouseEnter={showDetails}
+        href={site}>
+        <img src={img} alt="ERRO" />
       </a>
-      <section>
+
+      {info === true && (
+        <section>
         <h3>{title}</h3>
-        <p><strong>Tecnologia:</strong>{tech}</p>
+        <p>
+          <strong>Tecnologia:</strong>
+          {tech}
+        </p>
         <p>{description}</p>
-        <ButtonB text="Acesse o repositório" link={repo}/>
+        <ButtonB text="Acesse o repositório" link={repo} />
       </section>
+      )}
+
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;
